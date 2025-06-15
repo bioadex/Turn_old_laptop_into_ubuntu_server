@@ -1,0 +1,101 @@
++++++++++++++++++++++++++++++ System log ++++++++++++++++++++++++++++++++++++++++++++  
+
+cd /var/log 
+
+less messages       ##### to read any log message 
+
+tail messages       ##### this is will show the last log file messages
+
+tail -n 20 messages   ###### this will show the last 20 messages 
+
+tail -f messages      ####### to check what happen last on the log file 
+
+rsyslog               ###### ds s use to collect data from different part of Linux system and to forward message to other linux server 
+
+vi /etc/rsyslog.conf 
+
+tail -n 1 messages 
+
+journalctl -4 
+
+journalctl --since yesterday 
+
+
++++++++++++++++++++++++++++  How to shutdown Linux SYSTEM ++++++++++++++
+systemctl reboot 
+
+shutdown 
+
+shutdown -c          #### to cancel system shutdown 
+
+shutdown -h HH:MM    #### to shutdown the system at a particular date 
+
+date                 #### to check the current date 
+
+shutdown -h now      #### to shutdown the system immediately without warning 
+
+halt 
+
+systemctl poweroff 
+
+poweroff 
+
+system 
+
+hostname -I 
+
+head messages        ###### this is will bring the first log file messages 
+
+head -n 20 messages  
+
+lastlog         ##### this will make us to see the last log file. 
+
+
+########################## File System ###################################
+
+cd  /dev
+
+ls 
+
+ls -l sda 
+
+df           ###### file system 
+df -h 
+du -h /etc      ##### the size of each directory 
+
+####################### Mounting and Unmounting File System #######################
+
+blkid     ##### this is will lists the unique id of file system 
+df -h 
+
+how to mount a file system 
+mkdir /newhard 
+mount /dev/sdb1 /newhard  #### mount sdb1 to newhard directory 
+df -h 
+cd /newhard     #### to enter the directory newhard 
+
+mount -a    #### to mount all the file system together
+to UNmount 
+
+unmount /newhard    ##### this to remove the newhard file system 
+df -h               #### to check the file system 
+umount -a          #### to umount all the file system 
+
+fdisk -l               ##### to see all the hardisk attached to the system 
+
+parted -l     #### this will lists the numbers of hardisk on the system ####
+parted /dev/sdb 
+rm 1 
+print 
+quit 
+
+to create a new partition 
+
+fdisk /dev/sbd 
+p     
+default 1 
+
+wq    ##### to save and exit 
+
+fsck   #### file system check #####
+
