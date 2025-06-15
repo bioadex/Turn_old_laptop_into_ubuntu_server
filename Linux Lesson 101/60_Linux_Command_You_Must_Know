@@ -1,0 +1,60 @@
+Linux Command
+uptime # tell what time your have been up 
+date  # current time and date 
+who # current login 
+host
+pwd # print working directory 
+touch # to create empty file 
+touch dir1    # to create dir1 
+touch dir1/file1.txt # to create a file inside dir1 
+ls # to list all folder 
+touch file1.txt file2.txt file3.txt # to create multiple file 
+mkdir # to create directory 
+mkdir dir1 dir2 dir3 # to create multiple directory 
+mkdir -p # to create multiple directory inside a directory 
+hostname     # hostname of the linux Computer 
+whoami     # this is will let you who you are login as. 
+ls -l # will show you more details about the directory or file on your linux computer 
+clear     # to clean the screen 
+ls -a # will only show you file and directory header 
+ls -la   # will lists all file and directory including the hidden file 
+ls dir1  # list contain in directory 1
+cd    # change directory to move into a directory 
+example cd Downloads    # this will take you in side the Directory of Downloads 
+cd .. # move you to the parent directory 
+cd    # move you back to the home directory 
+cp    # copy file to dir    cp f1.txt dir1 
+cp f1.txt f2.txt f3.txt  dir2  ### to copy multiple file into directory 
+mv -v  # to move file e.g mv -v f1.txt f2.txt f3.txt 
+mv -v dir3/ dir1/   # to move the dir3 into dir1 
+mv  # to rename file e.g mv f1.txt f5500.txt
+rm  # to remove file or delete file e.g rm f5000.txt 
+rm -r  dir1 # to remove dir. 
+cat    # to read the content of a file 
+cat > file1.txt # to write into the file
+cat file1.txt > file2.txt # to copy one file to another file.  
+cat /proc/cpuinfo   # to display the cpu infomation. 
+grep     # is use to search in Linux
+tail 10 # display the last 10 things command you use. 
+man man     # is to make use of the manual command 
+passwd    /etc/passwd    # to change password of any user on the system 
+cat     /etc/passwd    # 
+man passwd # to access the manual password page 
+cd /usr/share/doc     # to read Linux Documentation 
+cd wget -1.14/    # file downloader    ####
+rpm    # use to manage the linux packages locate   
++++++++++++++++++++ Archive File and Uncompress file ++++++++++++++++++++
+tar    # to archive file   tar -cvf archive.tar 
+tar -tf  archive.tar   ### make you to see the file inside the archive 
+tar -cvf archive.tar  /etc    # unarchive the file 
+tar -xvf archive.tar   ### to extract file from tar 
+gzip, bzip2 xz    ### Are method to compress file
+gzip file.txt    ### to compress file 
+gunzip file1.txt.gz    ### to uncompress file 
+bzip2 file2.txt      #### to compress file using bzip2 
+bunzip2 file2.txt.bz2    #### to uncompress file of bzip2 
+xz file3.txt              ### to compress file using xz 
+xz -d file3.txt.xz       #### to decompress file using xz 
+echo "My name is Abi" > file1.txt    # to write the text into the file. 
+sudo su    # to enter as a root user 
+visudo   ### to enter the super user to give a user previledge 

@@ -1,0 +1,54 @@
+############################### Schedule Task Using at and cron ###########################
+
+apt install at      #### to install at command 
+systemctl enable atd    #### to enable at command 
+systemctl start atd     #### this is will start the atd 
+
+at now +6 hours        #### this will take you inside the at then you can write what it should do after +6 hrs
+reboot 
+
+at midnight 
+at 12 pm july 31 
+>>>>>>uptime 
+
+atq                    #### this will lists all the job that "at" will perform and time 
+atrm 4                #### this will remove the job "4" from the lists of job in the 'at' 
+
+cd /etc
+ls at*                #### this will list all the file in the 'at' folder 
+
++++++++++++++++++++++++++ the cron job is to perform the task simulateously +++++++++++++++++++++++++
+cd /root 
+nano uptime.sh 
+>>>>> #!/bin/bash
+echo "Today is $(date)" &> /root/uptime.log 
+chmod +x /root/uptime.sh 
+/root/uptime.sh 
+cat /root/uptime.log 
+
+cd /etc 
+ls cr*
+
+vi crontab
+
+q!     ###### to quit without saving ####
+
+Example: 
+corntab -e     ##### to  edit the corntab file        
+ubuntu
+>>>>>
+* * * * * /root/uptime.sh      ##### this will run the script at every minute and hour, day, week, months 
+
+30 * * * * /root/uptime.sh   #### this will run the script every 30 minute 
+
+30 12 * * * /root/uptime.sh   #### this will run the script at 12 hour 
+
+30 12 * * sat /root/uptime.sh   #### this will run the script on Sat 12:30pm 
+
+30 12 * * 6 /root/uptime.sh   #### this will run the script on Sat 12:30pm (when you choose number to rep. days)
+
+crontab -l     #### to check the cron job 
+
+crontab -l -u abey    #### this to check the cron job for each user example 'abey' 
+
+executible  file means its has x permission 
