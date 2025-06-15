@@ -1,0 +1,123 @@
++++++++++++++++++++++++++++++++++ Create Local Users and Local Groups +++++++++++++++++++++++++++
+
+id abbey     ### to get user information 
+
+ls -l /tmp   #### to lists file where the user is assoicate with 
+
+ps au    ##### is associate to a file 
+
+cat etc/group  #### to view the content of the group 
+
+su -    #### to change user 
+
+useradd ade2   #### to add new user 
+
+ls -l 
+
+cat etc/passwd   #### view the passord directory 
+
+passwd ade2    ### to set  password for user     pass changeme
+userdel ade2    ###  to remove user from Linux 
+
+userdel -r ade2  ### completely remove user and its home directory 
+
+groupadd sales  ### to create group (sales)
+
+getent group     ### this will list all group
+cat /etc/group   #### to check the group created 
+less /etc/group   #### to  check the group created                          Devop and ITDepartment and Software 
+
+groupadd --help ### to check for help 
+
+su   ### to switch between user 
+
+visudo   ### to enter the super user to give a user previledge 
+
+su ade2     #### to switch user (ade2)
+
+
+
++++++++++++++++++++++++++++++++++ Modify User, Groups and Password Aging ++++++++++++++++++++++++
+
+sudo usermod -L ade2    ### to locked a user 
+
+sudo usermod -U ade2    #### to unlock a user 
+
+sudo groupmod -n sales marketing   ### to modify exciting group, - n is to re-name the group 
+
+sudo groupmod -g 5000 sales   #### this is to set a group id to 5000 
+
+sudo usermod -G ITdep ade2     #### to add user ade2 to group ITdep 
+
+id ade2  ### to check info for the user "ade2"
+
+sudo chage -l ade2          ### to change the user ade2 details 
+
+sudo chage -d 0 ade2       ###  the user ade2 to change the password immediately 
+
+su - ade2                 ### to swtich user ade2 
+
+sudo chage -M 90 ade2     #### for user to change password in 90 days 
+
+sudo chage -l ade2 
+
+sudo chage  -m 3 ade2      #### this will info the password to b e change three days before 90 days
+
+date -d "+120 days"        ### check the date in 120 days 
+
+sudo chage -E 2023-12-31  ade2   ### this will require the user to change the passowrd at this date 
+
+sudo chage -l ade2       #### to get the details about the user ade2 
+
+sudo usermod -aG Apps ade2     #### to add user ade2 to another group with out removing user from former group    
+
+++++++++++++++++++++++++++++++ Permissions in Linux ++++++++++++++++++++++++++++++++++++++
+
+ls -l 
+
+drwxr-xr-x        #### rwx-----owners file permission, r-x ------ group file   r-x ---- others
+su -u 
+cd /home
+mkdir sales 
+mkdir sales/marketing    ### this will create dir Sales inside create dir Markerting 
+ls -l 
+
+chown user:group file/dir    #### to change the user n group file directory 
+
+chown :sales sales/       ### to change the user to sales 
+
+read = 4 
+write = 2 
+execute = 1 
+
+chmod 777    ##### this is add all the rwx permission 
+
+sudo chmod 775 sales    #### this will only give the sales group permission to rwx 
+
+ps aux | less ###  this will show those running process on the machine 
+
+kill -l 
+
+ps aux | grep "httpd" #### to see the process of the Apache Webserver running 
+
+top   ##### to see running process
+
+uptime #### to see when the Linux Pc have been up  
+
+systemctl status sshd.service     ##### this i will show the current start of the ssh 
+
+systemctl stop (sshd.service) 
+
+systemctl start sshd.service  
+
+systemctl reload sshd.service        
+
+systemctl is-active sshd  #### to see if the system is active 
+
+systemctl is-enabled sshd.service    #### this is to enable sshd.service 
+
+systemctl is-enabled httpd.service   #### to enable the httpd.service upon restart of the system. 
+
+systemctl list-units  #### to lists all the active system 
+
+systemctl list-units --type=service --all   #### this is will lists both active and inactive running system 
