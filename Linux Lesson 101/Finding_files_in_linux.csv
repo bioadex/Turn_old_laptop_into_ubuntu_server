@@ -1,0 +1,32 @@
++++++++++++++++++++++Finding Files in Linux+++++++++++++++++++++++++
+locate passwd       #### locate passwd file on the system 
+
+locate  -i messages    #### search for file that has message inside 
+
+locate -n messages   
+
+updatedb            #### to update database 
+
+find  /etc -name sshd_config          #### search for file 
+
+find  / -name "*.txt"      #### this will search for all file that has extention txt
+
+find  /home -user abbey    #### this will lists all file use by user Abbey
+
+find /home -group department #### this will lists all file use by the group department 
+
+find /home -uid 1000    ### search for root user 
+
+find /home - user abbey -group department ### search for files that user abbey in group department 
+
+find /home -perm 644    #### 
+
+find / -size 1M     #### will search for file that are size 1M 
+
+find / -size +1M    #### will search for file that have size more than 1M 
+
+find / -size -10k   ### will search for file that are 10 kilobyte 
+
+find / -mmin  -120   ### will search for file that are change 120 minutes ago 
+
+find /etc -type d    ### this will search for all directory in etc 
