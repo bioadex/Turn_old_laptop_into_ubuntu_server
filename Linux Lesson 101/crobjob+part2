@@ -1,0 +1,49 @@
+!!!!!!!!!!!!!! Cron Job in Linux !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+crontab -l       #this will list all cron job on your Linux server
+
+crontab -e     # to select which editor to edit the cron job dai
+
+@daily     # this will send the command or run the task daily 
+
+@hourly    # this will send the command hourly 
+
+* * * * *  command
+| | | | |  
+m | | | |
+  h | | |
+    dom |
+      | |
+      mon
+        | 
+        dow
+
+m = minute (1 - 59)
+h = hours  (0 - 23)
+dom = days of month (1 - 31)
+mon = month (Jan - Dec, 1 - 12)
+dow = days of week (0 - 7, Sun - Sat)
+
+@reboot     # reboot the system 
+
+sudo crontab -u root -e
+
+example 
+* * * * * apt install -y tmux
+
+sudo crontab -u root -l     # THis is the way to see crob job a user has to do 
+
+sudo cat /var/log/syslog | grep cron 
+
+sudo cat /var/log/syslog | grep CRON 
+
+Example"
+* * * * * date >> /root/date.txt
+
+cat /etc/passwd | grep www
+
+sudo su - www-data
+
+sudo crontab -u www-data -e       # edit the data user 
+
+www.crontab-generator.org
